@@ -1,0 +1,21 @@
+{
+  "name": "mu-plugins/local",
+  "description": "Primary wp plugin with site's custom logic",
+  "authors": [
+    {
+      "name": "Dmitry Seleznyov",
+      "email": "selim013@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "stoutlogic/acf-builder": "^1.11",
+    "timber/timber": "^1.18",
+    "hellonico/timber-dump-extension": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Local\\": "lib/"
+    }
+  }
+}

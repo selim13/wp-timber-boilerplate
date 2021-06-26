@@ -1,0 +1,27 @@
+# Scripts, backups, configs
+/*.sh
+/*.gz
+/*.db
+/.*
+*.log
+/justfile
+node_modules
+
+# Ignore all
+/wordpress/*
+
+# Place only our theme and custom plugins inside git
+!/wordpress/favicon.ico
+!/wordpress/wp-content
+/wordpress/wp-content/*
+!/wordpress/wp-content/themes
+/wordpress/wp-content/themes/*
+
+!/wordpress/wp-content/themes/timber-theme
+!/wordpress/wp-content/mu-plugins
+
+# Composer
+/wordpress/wp-content/mu-plugins/local/vendor
+
+# Some root files
+!.gitignore
