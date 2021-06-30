@@ -71,8 +71,8 @@ class TwigTheme extends Timber\Site
     public function enqueue_scripts()
     {
         wp_enqueue_script(
-            'app.js',
-            $this->asset('/scripts/app.js'),
+            'index.js',
+            $this->asset('/scripts/index.js'),
             [],
             null,
             true
@@ -88,7 +88,7 @@ class TwigTheme extends Timber\Site
             ]
         );
 
-        wp_enqueue_style('app.css', $this->asset('/styles/index.css'), false, null);
+        wp_enqueue_style('index.css', $this->asset('/styles/index.css'), false, null);
 
         wp_deregister_script('wp-embed');
         wp_dequeue_style('wp-block-library');
