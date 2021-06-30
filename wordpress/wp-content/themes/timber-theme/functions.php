@@ -22,6 +22,28 @@ class TwigTheme extends Timber\Site
         add_filter('timber/context', array($this, 'add_to_context'));
         add_filter('timber/twig', array($this, 'add_to_twig'));
 
+        /**
+         * Remove some meta stuff like XML RPC link,
+         * wlwmanifest and generator from head.
+         */
+        remove_action('wp_head', 'wlwmanifest_link');
+        remove_action('wp_head', 'feed_links_extra', 3);
+        remove_action('wp_head', 'feed_links', 2);
+        remove_action('wp_head', 'rsd_link');
+        remove_action('wp_head', 'rest_output_link_wp_head');
+        add_filter('the_generator', '__return_empty_string');
+        remove_action('wp_head', 'wp_oembed_add_discovery_links');
+        remove_action('rest_api_init', 'wp_oembed_register_route');
+        remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request');
+        remove_action('xmlrpc_rsd_apis', 'rest_output_rsd');
+        remove_action('wp_head', 'rest_output_link_wp_head',);
+        remove_action('template_redirect', 'rest_output_link_header', 11);
+        remove_action('wp_head', 'parent_post_rel_link');
+        remove_action('wp_head', 'start_post_rel_link');
+        remove_action('wp_head', 'adjacent_posts_rel_link');
+        remove_action('wp_head', 'wp_shortlink_wp_head');
+        remove_action('template_redirect', 'wp_shortlink_header', 11);
+
         parent::__construct();
     }
 
