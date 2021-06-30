@@ -2,7 +2,6 @@
 /*.sh
 /*.gz
 /*.db
-/.*
 *.log
 /justfile
 node_modules

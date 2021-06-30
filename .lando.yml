@@ -1,0 +1,7 @@
+name: alumash
+recipe: wordpress
+config:
+  php: 7.4
+  via: apache
+  webroot: wordpress
+  # xdebug: true
