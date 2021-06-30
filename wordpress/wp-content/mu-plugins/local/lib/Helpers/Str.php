@@ -1,6 +1,6 @@
 <?php
 
-namespace Local;
+namespace Local\Helpers;
 
 class Str
 {
